@@ -16,7 +16,7 @@ export default function Navbar() {
                     <div className="dropdown">
                         <li className="dropbtn">Get Started <b className="caret"></b></li>
                         <div className="dropdown-content">
-                            <a href="#">Search Volunteers</a>
+                            <a onClick={() => navigate('/search')}>Search Volunteers</a>
                             <a href="#">Manage Opputunities</a>
                             <a href="#">Register organization</a>
                         </div>

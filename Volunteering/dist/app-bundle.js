@@ -40020,6 +40020,7 @@ var home_1 = __webpack_require__(/*! ./home */ "./home.tsx");
 var react_router_dom_1 = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/dist/index.js");
 var login_1 = __webpack_require__(/*! ./login */ "./login.tsx");
 var mlogin_1 = __webpack_require__(/*! ./mlogin */ "./mlogin.tsx");
+var s_volunteers_1 = __webpack_require__(/*! ./s-volunteers */ "./s-volunteers.tsx");
 var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 var ReactDOM = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
 var Hello = /** @class */ (function (_super) {
@@ -40032,7 +40033,8 @@ var Hello = /** @class */ (function (_super) {
             React.createElement(react_router_dom_1.Routes, null,
                 React.createElement(react_router_dom_1.Route, { path: "/", element: React.createElement(home_1.default, null) }),
                 React.createElement(react_router_dom_1.Route, { path: "/vlogin", element: React.createElement(login_1.default, null) }),
-                React.createElement(react_router_dom_1.Route, { path: "/mlogin", element: React.createElement(mlogin_1.default, null) }))));
+                React.createElement(react_router_dom_1.Route, { path: "/mlogin", element: React.createElement(mlogin_1.default, null) }),
+                React.createElement(react_router_dom_1.Route, { path: "/search", element: React.createElement(s_volunteers_1.default, null) }))));
     };
     return Hello;
 }(React.Component));
@@ -40165,7 +40167,7 @@ function Navbar() {
                         "Get Started ",
                         React.createElement("b", { className: "caret" })),
                     React.createElement("div", { className: "dropdown-content" },
-                        React.createElement("a", { href: "#" }, "Search Volunteers"),
+                        React.createElement("a", { onClick: function () { return navigate('/search'); } }, "Search Volunteers"),
                         React.createElement("a", { href: "#" }, "Manage Opputunities"),
                         React.createElement("a", { href: "#" }, "Register organization"))),
                 React.createElement("div", { className: "dropdown" },
@@ -40380,6 +40382,52 @@ var Mlogin = /** @class */ (function (_super) {
     return Mlogin;
 }(React.Component));
 exports["default"] = Mlogin;
+
+
+/***/ }),
+
+/***/ "./s-volunteers.tsx":
+/*!**************************!*\
+  !*** ./s-volunteers.tsx ***!
+  \**************************/
+/***/ (function(__unused_webpack_module, exports, __webpack_require__) {
+
+
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        if (typeof b !== "function" && b !== null)
+            throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+var navbar_1 = __webpack_require__(/*! ./components/navbar */ "./components/navbar.tsx");
+var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+var ReactDOM = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
+var SVolunteer = /** @class */ (function (_super) {
+    __extends(SVolunteer, _super);
+    function SVolunteer() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    SVolunteer.prototype.render = function () {
+        return (React.createElement("div", null,
+            React.createElement(navbar_1.default, null),
+            React.createElement("div", { className: "search--container" },
+                React.createElement("div", { className: "row" },
+                    React.createElement("div", { className: "col" },
+                        React.createElement("h2", { className: "form--title" }, "Search Volunteer"))))));
+    };
+    return SVolunteer;
+}(React.components));
+exports["default"] = SVolunteer;
 
 
 /***/ })
