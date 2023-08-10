@@ -40192,6 +40192,227 @@ exports["default"] = Navbar;
 
 /***/ }),
 
+/***/ "./components/search.tsx":
+/*!*******************************!*\
+  !*** ./components/search.tsx ***!
+  \*******************************/
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
+
+
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+var ReactDOM = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
+function Search() {
+    function myFunction() {
+        var input, filter, table, tr, td, i, txtValue;
+        input = document.getElementById("myInput");
+        filter = input.value.toUpperCase();
+        table = document.getElementById("myTable");
+        tr = table.getElementsByTagName("tr");
+        for (i = 0; i < tr.length; i++) {
+            td = tr[i].getElementsByTagName("td")[0];
+            if (td) {
+                txtValue = td.textContent || td.innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    tr[i].style.display = "";
+                }
+                else {
+                    tr[i].style.display = "none";
+                }
+            }
+        }
+    }
+    function skillchecker() {
+        var input, filter, table, tr, td, i, txtValue;
+        input = document.getElementById("mySkill");
+        filter = input.value.toUpperCase();
+        table = document.getElementById("myTable");
+        tr = table.getElementsByTagName("tr");
+        for (i = 0; i < tr.length; i++) {
+            td = tr[i].getElementsByTagName("td")[4];
+            if (td) {
+                txtValue = td.textContent || td.innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    tr[i].style.display = "";
+                }
+                else {
+                    tr[i].style.display = "none";
+                }
+            }
+        }
+    }
+    function statechecker() {
+        var input, filter, table, tr, td, i, txtValue;
+        input = document.getElementById("myState");
+        filter = input.value.toUpperCase();
+        table = document.getElementById("myTable");
+        tr = table.getElementsByTagName("tr");
+        for (i = 0; i < tr.length; i++) {
+            td = tr[i].getElementsByTagName("td")[2];
+            if (td) {
+                txtValue = td.textContent || td.innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    tr[i].style.display = "";
+                }
+                else {
+                    tr[i].style.display = "none";
+                }
+            }
+        }
+    }
+    function genderchecker() {
+        var input, filter, table, tr, td, i, txtValue;
+        input = document.getElementById("myGender");
+        filter = input.value.toUpperCase();
+        table = document.getElementById("myTable");
+        tr = table.getElementsByTagName("tr");
+        for (i = 0; i < tr.length; i++) {
+            td = tr[i].getElementsByTagName("td")[3];
+            if (td) {
+                txtValue = td.textContent || td.innerText;
+                if (txtValue.toUpperCase() === filter) {
+                    tr[i].style.display = "";
+                }
+                else {
+                    tr[i].style.display = "none";
+                }
+            }
+        }
+    }
+    function genderchecker2() {
+        var input, filter, table, tr, td, i, txtValue;
+        input = document.getElementById("myGender2");
+        filter = input.value.toUpperCase();
+        table = document.getElementById("myTable");
+        tr = table.getElementsByTagName("tr");
+        for (i = 0; i < tr.length; i++) {
+            td = tr[i].getElementsByTagName("td")[3];
+            if (td) {
+                txtValue = td.textContent || td.innerText;
+                if (txtValue.toUpperCase() === filter) {
+                    tr[i].style.display = "";
+                }
+                else {
+                    tr[i].style.display = "none";
+                }
+            }
+        }
+    }
+    function genderchecker3() {
+        var input, filter, table, tr, td, i, txtValue;
+        input = document.getElementById("myGender3");
+        filter = input.value.toUpperCase();
+        table = document.getElementById("myTable");
+        tr = table.getElementsByTagName("tr");
+        for (i = 0; i < tr.length; i++) {
+            td = tr[i].getElementsByTagName("td")[3];
+            if (td) {
+                txtValue = td.textContent || td.innerText;
+                if (txtValue.toUpperCase() === filter) {
+                    tr[i].style.display = "";
+                }
+                else {
+                    tr[i].style.display = "none";
+                }
+            }
+        }
+    }
+    function handleClick() {
+        document.getElementById("Skills").classList.toggle("show");
+    }
+    function handleClick2() {
+        document.getElementById("States").classList.toggle("show");
+    }
+    function handleClick3() {
+        document.getElementById("Gender").classList.toggle("show");
+    }
+    return (React.createElement("section", { className: "search--container" },
+        React.createElement("div", { className: "row" },
+            React.createElement("div", { className: "col" },
+                React.createElement("h2", { className: "form--title" }, "Search Volunteer"))),
+        React.createElement("div", { className: "row--spacer" },
+            React.createElement("div", { className: "col-sb" },
+                React.createElement("input", { type: "text", id: "myInput", onKeyUp: myFunction, placeholder: "\uD83D\uDD0DSearch for names" })),
+            React.createElement("div", { className: "row--spacer" },
+                React.createElement("div", { className: "filter" },
+                    React.createElement("ul", null,
+                        React.createElement("h2", null, "All filters"),
+                        React.createElement("div", { className: "dropdwn" },
+                            React.createElement("li", null,
+                                React.createElement("button", { onClick: handleClick, className: "dropdwn-btn" },
+                                    "Skill",
+                                    React.createElement("b", { className: "caret" }))),
+                            React.createElement("div", { id: "Skills", className: "dropdwn--content" },
+                                React.createElement("input", { id: "mySkill", onKeyUp: skillchecker, type: "text", className: "skill-check" }))),
+                        React.createElement("div", { className: "dropdwn" },
+                            React.createElement("li", null,
+                                React.createElement("button", { onClick: handleClick2, className: "dropdwn-btn" },
+                                    "State",
+                                    React.createElement("b", { className: "caret" }))),
+                            React.createElement("div", { id: "States", className: "dropdwn--content" },
+                                React.createElement("input", { id: "myState", onKeyUp: statechecker, type: "text", className: "state-check" }))),
+                        React.createElement("div", { className: "dropdwn" },
+                            React.createElement("li", null,
+                                React.createElement("button", { onClick: handleClick3, className: "dropdwn-btn" },
+                                    "Gender",
+                                    React.createElement("b", { className: "caret" }))),
+                            React.createElement("div", { id: "Gender", className: "dropdwn--content" },
+                                React.createElement("div", { className: "gender-check" },
+                                    React.createElement("input", { id: "myGender", onChange: genderchecker, type: "checkbox", value: "M" }),
+                                    React.createElement("b", { className: "checker--text" }, "M")),
+                                React.createElement("div", { className: "gender-check" },
+                                    React.createElement("input", { id: "myGender2", onChange: genderchecker2, type: "checkbox", value: "F" }),
+                                    React.createElement("b", { className: "checker--text" }, "F")),
+                                React.createElement("div", { className: "gender-check" },
+                                    React.createElement("input", { id: "myGender3", onChange: genderchecker3, type: "checkbox", value: "undefined" }),
+                                    React.createElement("b", { className: "checker--text" }, "undefined")))))),
+                React.createElement("div", { className: "col-m" },
+                    React.createElement("table", { id: "myTable" },
+                        React.createElement("tr", { className: "headers" },
+                            React.createElement("th", null, "Name"),
+                            React.createElement("th", null, "City"),
+                            React.createElement("th", null, "State"),
+                            React.createElement("th", null, "Gender"),
+                            React.createElement("th", null, "Skills"),
+                            React.createElement("th", null, "Add")),
+                        React.createElement("tr", null,
+                            React.createElement("td", null, "John Doe"),
+                            React.createElement("td", null, "Jacksonville"),
+                            React.createElement("td", null, "Florida"),
+                            React.createElement("td", null, "M"),
+                            React.createElement("td", null, "photography, lifting, something"),
+                            React.createElement("td", null,
+                                React.createElement("button", null, "Add"))),
+                        React.createElement("tr", null,
+                            React.createElement("td", null, "Jane Jackson"),
+                            React.createElement("td", null, "Jacksonville"),
+                            React.createElement("td", null, "Texas"),
+                            React.createElement("td", null, "F"),
+                            React.createElement("td", null, "photography"),
+                            React.createElement("td", null,
+                                React.createElement("button", null, "Add"))),
+                        React.createElement("tr", null,
+                            React.createElement("td", null, "Michael Heard"),
+                            React.createElement("td", null, "Miami"),
+                            React.createElement("td", null, "Florida"),
+                            React.createElement("td", null, "undefined"),
+                            React.createElement("td", null, "decoration"),
+                            React.createElement("td", null,
+                                React.createElement("button", null, "Add"))),
+                        React.createElement("tr", null,
+                            React.createElement("td", null, "Alex Edwards"),
+                            React.createElement("td", null, "Austin"),
+                            React.createElement("td", null, "Texas"),
+                            React.createElement("td", null, "M"),
+                            React.createElement("td", null, "cleaning"),
+                            React.createElement("td", null,
+                                React.createElement("button", null, "Add")))))))));
+}
+exports["default"] = Search;
+
+
+/***/ }),
+
 /***/ "./components/vform.tsx":
 /*!******************************!*\
   !*** ./components/vform.tsx ***!
@@ -40410,6 +40631,7 @@ var __extends = (this && this.__extends) || (function () {
 })();
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 var navbar_1 = __webpack_require__(/*! ./components/navbar */ "./components/navbar.tsx");
+var search_1 = __webpack_require__(/*! ./components/search */ "./components/search.tsx");
 var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 var ReactDOM = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
 var SVolunteer = /** @class */ (function (_super) {
@@ -40420,13 +40642,10 @@ var SVolunteer = /** @class */ (function (_super) {
     SVolunteer.prototype.render = function () {
         return (React.createElement("div", null,
             React.createElement(navbar_1.default, null),
-            React.createElement("div", { className: "search--container" },
-                React.createElement("div", { className: "row" },
-                    React.createElement("div", { className: "col" },
-                        React.createElement("h2", { className: "form--title" }, "Search Volunteer"))))));
+            React.createElement(search_1.default, null)));
     };
     return SVolunteer;
-}(React.components));
+}(React.Component));
 exports["default"] = SVolunteer;
 
 

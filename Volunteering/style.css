@@ -207,6 +207,14 @@ container{
     display:block;
 }
 
+.search--container{
+    width:1500px;
+    padding:20px 30px 20px 0px;
+    margin-right:auto;
+    margin-left:auto;
+    display:block;
+}
+
 .row{
     margin-left:10px;
     margin-right:10px;
@@ -333,3 +341,107 @@ label {
     width:34%;
     float:left;
 }
+
+#myInput{
+    width:80%;
+    font-size:16px;
+    padding:12px 20px 12px 40px;
+    border: 1px solid #eee;
+    margin-bottom:12px;
+    border-radius:5px;
+}
+
+.col-sb{
+    margin-left:200px;
+    width:80%;
+}
+
+
+
+#myTable {
+    width:100%;
+    border-collapse: collapse; /* Collapse borders */
+    border: 1px solid #ddd; /* Add a grey border */
+    font-size: 16px; /* Increase font-size */
+}
+
+#myTable th, #myTable td {
+    text-align: center; /* Left-align text */
+    padding: 12px; /* Add padding */
+}
+
+#myTable tr {
+/* Add a bottom border to all table rows */
+    border-bottom: 1px solid #ddd;
+}
+
+#myTable tr.headers, #myTable tr:hover {
+/* Add a grey background color to the table header and on hover */
+    background-color: #f1f1f1;
+}
+
+.filter {
+    width: 16%;
+    padding-top: 7px;
+    margin-bottom: 0;
+    text-align: left;
+    float: left;
+    border-right: 1px solid #ccc;
+    background-color: white;
+    margin-right:50px;
+}
+
+    .filter > ul {
+        list-style: none;
+        
+    }
+
+        .filter > ul > h2 {
+            font-size: 40px;
+            font-weight: bold;
+            border-bottom: 1px solid #ccc;
+            margin-bottom: 12px;
+            margin-right: 10%;
+        }
+
+.dropdwn-btn{
+    width:100%;
+    text-align:left;
+    background-color:white;
+    border:0;
+    font-size:24px;
+    border-bottom:1px solid #ccc;
+    margin-bottom:12px;
+}
+
+.dropdwn > li:hover .dropdwn > li:focus{
+    background-color:#2980B9;
+}
+
+.dropdwn {
+    margin-right: 10%;
+}
+
+.dropdwn--content {
+    display: none;
+    position:relative;
+    background-color: white;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index:1;
+    min-width:180px;
+}
+
+.skill-check {
+    width:100%;
+    font-size: 12px;
+    border: 1px solid #000;
+}
+
+.state-check {
+    width: 100%;
+    font-size: 12px;
+    border: 1px solid #000;
+}
+
+
+.show{display:block;}

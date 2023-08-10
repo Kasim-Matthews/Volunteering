@@ -65,6 +65,9 @@
     <TypeScriptCompile Include="components\navbar.tsx">
       <SubType>Code</SubType>
     </TypeScriptCompile>
+    <TypeScriptCompile Include="components\search.tsx">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
     <TypeScriptCompile Include="components\vform.tsx">
       <SubType>Code</SubType>
     </TypeScriptCompile>
