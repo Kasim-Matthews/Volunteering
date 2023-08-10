@@ -11,7 +11,7 @@ export default function Navbar() {
     return (
         <header>
             <container className="header--container">
-                <img className="header--logo" src="./images/Group 5.png" />
+                <img onClick={() => navigate('/')} className="header--logo" src="./images/Group 5.png" />
                 <ul className="header--nav">
                     <div className="dropdown">
                         <li className="dropbtn">Get Started <b className="caret"></b></li>

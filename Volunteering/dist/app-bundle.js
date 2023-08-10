@@ -40160,7 +40160,7 @@ function Navbar() {
     var navigate = (0, react_router_dom_1.useNavigate)();
     return (React.createElement("header", null,
         React.createElement("container", { className: "header--container" },
-            React.createElement("img", { className: "header--logo", src: "./images/Group 5.png" }),
+            React.createElement("img", { onClick: function () { return navigate('/'); }, className: "header--logo", src: "./images/Group 5.png" }),
             React.createElement("ul", { className: "header--nav" },
                 React.createElement("div", { className: "dropdown" },
                     React.createElement("li", { className: "dropbtn" },
@@ -40256,6 +40256,29 @@ function Search() {
                 }
                 else {
                     tr[i].style.display = "none";
+                }
+            }
+        }
+    }
+    function filtersection(event) {
+        var filter, table, tr, td, i, txtValue;
+        table = document.getElementById("myTable");
+        tr = table.getElementsByTagName("tr");
+        filter = event.target.value.toUpperCase();
+        for (i = 0; i < tr.length; i++) {
+            td = tr[i].getElementsByTagName("td")[3];
+            if (td) {
+                if (filter == "") {
+                    tr[i].style.display = "";
+                }
+                else {
+                    txtValue = td.textContent || td.innerText;
+                    if (txtValue.toUpperCase() == filter) {
+                        tr[i].style.display = "";
+                    }
+                    else {
+                        tr[i].style.display = "none";
+                    }
                 }
             }
         }
@@ -40358,13 +40381,16 @@ function Search() {
                                     React.createElement("b", { className: "caret" }))),
                             React.createElement("div", { id: "Gender", className: "dropdwn--content" },
                                 React.createElement("div", { className: "gender-check" },
-                                    React.createElement("input", { id: "myGender", onChange: genderchecker, type: "checkbox", value: "M" }),
+                                    React.createElement("input", { id: "Showall", onChange: filtersection, type: "checkbox", value: "" }),
+                                    React.createElement("b", { className: "checker--text" }, "Show All")),
+                                React.createElement("div", { className: "gender-check" },
+                                    React.createElement("input", { id: "myGender", onChange: filtersection, type: "checkbox", value: "M" }),
                                     React.createElement("b", { className: "checker--text" }, "M")),
                                 React.createElement("div", { className: "gender-check" },
-                                    React.createElement("input", { id: "myGender2", onChange: genderchecker2, type: "checkbox", value: "F" }),
+                                    React.createElement("input", { id: "myGender2", onChange: filtersection, type: "checkbox", value: "F" }),
                                     React.createElement("b", { className: "checker--text" }, "F")),
                                 React.createElement("div", { className: "gender-check" },
-                                    React.createElement("input", { id: "myGender3", onChange: genderchecker3, type: "checkbox", value: "undefined" }),
+                                    React.createElement("input", { id: "myGender3", onChange: filtersection, type: "checkbox", value: "Undefined" }),
                                     React.createElement("b", { className: "checker--text" }, "undefined")))))),
                 React.createElement("div", { className: "col-m" },
                     React.createElement("table", { id: "myTable" },

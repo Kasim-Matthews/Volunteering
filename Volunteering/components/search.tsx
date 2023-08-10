@@ -1,3 +1,5 @@
+import useRef from 'react';
+
 declare var require: any
 
 var React = require('react');
@@ -58,6 +60,31 @@ export default function Search() {
                     tr[i].style.display = "none";
                 }
             }
+        }
+    }
+
+    function filtersection(event){
+        var filter, table, tr, td, i, txtValue;
+        table = document.getElementById("myTable");
+        tr = table.getElementsByTagName("tr");
+        filter = event.target.value.toUpperCase();
+        for (i = 0; i < tr.length; i++) {
+            td = tr[i].getElementsByTagName("td")[3];
+            if (td) {
+                if (filter == "") {
+                    tr[i].style.display = "";
+                }
+
+                else {
+                    txtValue = td.textContent || td.innerText;
+                    if (txtValue.toUpperCase() == filter) {
+                        tr[i].style.display = "";
+                    } else {
+                        tr[i].style.display = "none";
+                    }
+                }
+            }
+
         }
     }
 
@@ -167,17 +194,23 @@ export default function Search() {
                                     <button onClick={handleClick3} className="dropdwn-btn">Gender<b className="caret"></b></button>
                                 </li>
                                 <div id="Gender" className="dropdwn--content">
+
                                     <div className="gender-check">
-                                        <input id="myGender" onChange={genderchecker} type="checkbox" value="M" />
+                                        <input id="Showall" onChange={filtersection} type="checkbox" value="" />
+                                        <b className="checker--text">Show All</b>
+                                    </div>
+
+                                    <div className="gender-check">
+                                        <input id="myGender" onChange={filtersection} type="checkbox" value="M" />
                                         <b className="checker--text">M</b>
                                     </div>
                                     <div className="gender-check">
-                                        <input id="myGender2" onChange={genderchecker2} type="checkbox" value="F" />
+                                        <input id="myGender2" onChange={filtersection} type="checkbox" value="F" />
                                         <b className="checker--text">F</b>
                                     </div>
 
                                     <div className="gender-check">
-                                        <input id="myGender3" onChange={genderchecker3} type="checkbox" value="undefined" />
+                                        <input id="myGender3" onChange={filtersection} type="checkbox" value="Undefined" />
                                         <b className="checker--text">undefined</b>
                                     </div>
                                 </div>
