@@ -40642,7 +40642,31 @@ var SVolunteer = /** @class */ (function (_super) {
     SVolunteer.prototype.render = function () {
         return (React.createElement("div", null,
             React.createElement(navbar_1.default, null),
-            React.createElement(search_1.default, null)));
+            React.createElement(search_1.default, null),
+            React.createElement("footer", { className: "regular-footer-search" },
+                React.createElement("div", { className: "footer--inner" },
+                    React.createElement("div", { className: "third" },
+                        React.createElement("h3", null, "Get Started"),
+                        React.createElement("p", null, "Search Volunteers"),
+                        React.createElement("p", null, "Manage Oppurtunities"),
+                        React.createElement("p", null, "Register Organization"),
+                        React.createElement("p", null, "Volunteer Login"),
+                        React.createElement("p", null, "Manager Login")),
+                    React.createElement("div", { className: "third2" },
+                        React.createElement("h3", null, "Product"),
+                        React.createElement("p", null, "Who uses Voyage Volunteering?"),
+                        React.createElement("p", null, "Why use Voyage Volunteering?"),
+                        React.createElement("p", null, "How it Works"),
+                        React.createElement("p", null, "Success Stories"),
+                        React.createElement("p", null, "Company Promise")),
+                    React.createElement("div", { className: "third3" },
+                        React.createElement("h3", null, "Copmany"),
+                        React.createElement("p", null, "About Us"),
+                        React.createElement("p", null, "Contact Us"),
+                        React.createElement("p", null, "Frequently Asked Questions"),
+                        React.createElement("p", null, "Terms of service"),
+                        React.createElement("p", null, "Privacy Policy"))),
+                React.createElement("p", { className: "copyright" }, "\u00A9voyagevolunteering.com. All Rights Reserved"))));
     };
     return SVolunteer;
 }(React.Component));

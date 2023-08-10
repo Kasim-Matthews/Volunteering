@@ -445,3 +445,15 @@ label {
 
 
 .show{display:block;}
+
+.regular-footer-search {
+    padding-top: 11px;
+    height: 230px;
+    margin-top: 25%;
+    background-color: #1B1212;
+    color: white;
+    font-size: 16px;
+    width: 100%;
+    position: relative;
+}
+
