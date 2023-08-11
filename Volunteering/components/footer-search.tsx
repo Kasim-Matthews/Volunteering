@@ -8,7 +8,7 @@ export default function Footer() {
     const navigate = useNavigate();
 
     return (
-        <footer className="regular-footer">
+        <footer className="regular-footer-search">
             <div className="footer--inner">
                 <div className="third">
                     <h3>Get Started</h3>

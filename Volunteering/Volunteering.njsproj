@@ -56,6 +56,9 @@
     <TypeScriptCompile Include="app.tsx">
       <SubType>Code</SubType>
     </TypeScriptCompile>
+    <TypeScriptCompile Include="components\footer-search.tsx">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
     <TypeScriptCompile Include="components\footer.tsx">
       <SubType>Code</SubType>
     </TypeScriptCompile>

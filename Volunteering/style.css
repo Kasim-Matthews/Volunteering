@@ -169,12 +169,27 @@ container{
 .third > p{
     margin: 0 0 10px;
 }
+
+.third > p:hover {
+    color:#ccc;
+}
+
 .third2 > p {
     margin: 0 0 10px;
 }
+
+.third2 > p:hover {
+    color: #ccc;
+}
+
 .third3 > p {
     margin: 0 0 10px;
 }
+
+.third3 > p:hover {
+    color: #ccc;
+}
+
 .third > h3 {
     margin: 0 0 15px;
     font-weight:bold;
