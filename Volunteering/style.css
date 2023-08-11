@@ -169,6 +169,9 @@ container{
 .third > p{
     margin: 0 0 10px;
 }
+.third > p:hover {
+    background-color:#eee;
+}
 .third2 > p {
     margin: 0 0 10px;
 }

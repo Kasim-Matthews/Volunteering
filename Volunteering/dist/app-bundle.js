@@ -40052,18 +40052,20 @@ ReactDOM.render(React.createElement(Hello, null), document.getElementById('root'
 
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
+var react_router_dom_1 = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/dist/index.js");
 var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 var ReactDOM = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
 function Footer() {
+    var navigate = (0, react_router_dom_1.useNavigate)();
     return (React.createElement("footer", { className: "regular-footer" },
         React.createElement("div", { className: "footer--inner" },
             React.createElement("div", { className: "third" },
                 React.createElement("h3", null, "Get Started"),
-                React.createElement("p", null, "Search Volunteers"),
+                React.createElement("p", { onClick: function () { return navigate('/search'); } }, "Search Volunteers"),
                 React.createElement("p", null, "Manage Oppurtunities"),
                 React.createElement("p", null, "Register Organization"),
-                React.createElement("p", null, "Volunteer Login"),
-                React.createElement("p", null, "Manager Login")),
+                React.createElement("p", { onClick: function () { return navigate('/vlogin'); } }, "Volunteer Login"),
+                React.createElement("p", { onClick: function () { return navigate('/mlogin'); } }, "Manager Login")),
             React.createElement("div", { className: "third2" },
                 React.createElement("h3", null, "Product"),
                 React.createElement("p", null, "Who uses Voyage Volunteering?"),
@@ -40658,8 +40660,10 @@ var __extends = (this && this.__extends) || (function () {
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 var navbar_1 = __webpack_require__(/*! ./components/navbar */ "./components/navbar.tsx");
 var search_1 = __webpack_require__(/*! ./components/search */ "./components/search.tsx");
+var react_router_dom_1 = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/dist/index.js");
 var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 var ReactDOM = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
+var navigate = (0, react_router_dom_1.useNavigate)();
 var SVolunteer = /** @class */ (function (_super) {
     __extends(SVolunteer, _super);
     function SVolunteer() {
@@ -40673,11 +40677,11 @@ var SVolunteer = /** @class */ (function (_super) {
                 React.createElement("div", { className: "footer--inner" },
                     React.createElement("div", { className: "third" },
                         React.createElement("h3", null, "Get Started"),
-                        React.createElement("p", null, "Search Volunteers"),
+                        React.createElement("p", { onClick: function () { return navigate('/search'); } }, "Search Volunteers"),
                         React.createElement("p", null, "Manage Oppurtunities"),
                         React.createElement("p", null, "Register Organization"),
-                        React.createElement("p", null, "Volunteer Login"),
-                        React.createElement("p", null, "Manager Login")),
+                        React.createElement("p", { onClick: function () { return navigate('/vlogin'); } }, "Volunteer Login"),
+                        React.createElement("p", { onClick: function () { return navigate('/mlogin'); } }, "Manager Login")),
                     React.createElement("div", { className: "third2" },
                         React.createElement("h3", null, "Product"),
                         React.createElement("p", null, "Who uses Voyage Volunteering?"),
