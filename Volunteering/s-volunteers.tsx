@@ -1,12 +1,10 @@
 import Navbar from './components/navbar'
 import Footer from './components/footer'
 import Search from './components/search'
-import { Link, useNavigate } from 'react-router-dom'
 declare var require: any
 
 var React = require('react');
 var ReactDOM = require('react-dom');
-const navigate = useNavigate();
 
 export default class SVolunteer extends React.Component {
     render() {
@@ -18,11 +16,11 @@ export default class SVolunteer extends React.Component {
                     <div className="footer--inner">
                         <div className="third">
                             <h3>Get Started</h3>
-                            <p onClick={() => navigate('/search')}>Search Volunteers</p>
+                            <p>Search Volunteers</p>
                             <p>Manage Oppurtunities</p>
                             <p>Register Organization</p>
-                            <p onClick={() => navigate('/vlogin')}>Volunteer Login</p>
-                            <p onClick={() => navigate('/mlogin')}>Manager Login</p>
+                            <p>Volunteer Login</p>
+                            <p>Manager Login</p>
                         </div>
                         <div className="third2">
                             <h3>Product</h3>
