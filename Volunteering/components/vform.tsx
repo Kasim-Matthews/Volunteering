@@ -1,9 +1,45 @@
+import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
+
 declare var require: any
 
 var React = require('react');
 var ReactDOM = require('react-dom');
 
-export default function Form(){
+export default function Form() {
+
+    const database = [
+        {
+            username: "user1",
+            password: "pass1"
+        }
+    ];
+
+    const navigate = useNavigate();
+
+    const [username, setUsername] = useState("");
+    const [password, setPassword] = useState("");
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+
+
+        var userData = database.find((user) => user.username === username)
+
+        if (userData) {
+            if (userData.password !== password) {
+                alert("Password invalid");
+            }
+            else {
+                navigate('/search');
+            }
+        }
+        else {
+            alert("Username invalid");
+        }
+
+    }
+
     return (
         <div>
             <section className="form--container">
@@ -19,19 +55,19 @@ export default function Form(){
                 </div>
                 <div className="row--spacer">
                     <div className="col">
-                        <form className="v--form">
+                        <form className="v--form" onSubmit={handleSubmit} >
                             <div className="row--spacer">
                                 <div className="form--group">
                                     <label className="col-sm" htmlfor="input_username">Username</label>
                                     <div className="col-m">
-                                        <input type="text" id="input_username" name="input_username" placeholder="Username" className="form--control" />
+                                        <input type="text" id="input_username" name="username" placeholder="Username" onChange={(e) => setUsername(e.target.value)} className="form--control" />
                                     </div>
                                 </div>
 
                                 <div className="form--group">
                                     <label className="col-sm" htmlfor="input_password">Password</label>
                                     <div className="col-m">
-                                        <input type="text" id="input_password" name="input_password" placeholder="Password" className="form--control" />
+                                        <input type="text" id="input_password" name="password" placeholder="Password" onChange={(e) => setPassword(e.target.value)} className="form--control" />
                                     </div>
                                 </div>
 

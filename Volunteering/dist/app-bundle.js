@@ -40492,9 +40492,35 @@ exports["default"] = Search;
 
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
+var react_1 = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+var react_router_dom_1 = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/dist/index.js");
 var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 var ReactDOM = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
 function Form() {
+    var database = [
+        {
+            username: "user1",
+            password: "pass1"
+        }
+    ];
+    var navigate = (0, react_router_dom_1.useNavigate)();
+    var _a = (0, react_1.useState)(""), username = _a[0], setUsername = _a[1];
+    var _b = (0, react_1.useState)(""), password = _b[0], setPassword = _b[1];
+    var handleSubmit = function (event) {
+        event.preventDefault();
+        var userData = database.find(function (user) { return user.username === username; });
+        if (userData) {
+            if (userData.password !== password) {
+                alert("Password invalid");
+            }
+            else {
+                navigate('/search');
+            }
+        }
+        else {
+            alert("Username invalid");
+        }
+    };
     return (React.createElement("div", null,
         React.createElement("section", { className: "form--container" },
             React.createElement("div", { className: "row" },
@@ -40505,16 +40531,16 @@ function Form() {
                     React.createElement("div", { className: "user--reminder" }, "This login page assumes you are already a registered volunteer for an organization. If you need to register, then contact your volunteer manager for the correct URL."))),
             React.createElement("div", { className: "row--spacer" },
                 React.createElement("div", { className: "col" },
-                    React.createElement("form", { className: "v--form" },
+                    React.createElement("form", { className: "v--form", onSubmit: handleSubmit },
                         React.createElement("div", { className: "row--spacer" },
                             React.createElement("div", { className: "form--group" },
                                 React.createElement("label", { className: "col-sm", htmlfor: "input_username" }, "Username"),
                                 React.createElement("div", { className: "col-m" },
-                                    React.createElement("input", { type: "text", id: "input_username", name: "input_username", placeholder: "Username", className: "form--control" }))),
+                                    React.createElement("input", { type: "text", id: "input_username", name: "username", placeholder: "Username", onChange: function (e) { return setUsername(e.target.value); }, className: "form--control" }))),
                             React.createElement("div", { className: "form--group" },
                                 React.createElement("label", { className: "col-sm", htmlfor: "input_password" }, "Password"),
                                 React.createElement("div", { className: "col-m" },
-                                    React.createElement("input", { type: "text", id: "input_password", name: "input_password", placeholder: "Password", className: "form--control" }))),
+                                    React.createElement("input", { type: "text", id: "input_password", name: "password", placeholder: "Password", onChange: function (e) { return setPassword(e.target.value); }, className: "form--control" }))),
                             React.createElement("div", { className: "form--group" },
                                 React.createElement("div", { className: "col-mc" },
                                     React.createElement("input", { type: "checkbox", id: "input_anti-spam", name: "input_anti-spam", className: "form--check" }),
