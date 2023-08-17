@@ -1,55 +1,9 @@
-import { useState, useNavigate } from 'react';
-
 declare var require: any
 
 var React = require('react');
 var ReactDOM = require('react-dom');
 
-
-
-export default function Form() {
-
-    const navigate = useNavigate();
-
-    const errors = {
-        username: "invalid username",
-        password: "invalid password"
-    };
-
-    const database = [
-        {
-            username: "user1",
-            password: "pass1"
-        }
-    ]
-    const [errorMessages, setErrorMessages] = useState({});
-    const [username, setUserName] = useState("");
-    const [password, setPassword] = useState("");
-
-    const handleSubmit = (event) => {
-        event.preventDefault();
-
-        var { username, password } = document.forms[0];
-
-        const userData = database.find((user) => user.username === username);
-
-        if (userData) {
-            if (userData.password !== password.value) {
-                setErrorMessages({ name: "password", message: errors.password });
-            }
-            else {
-                navigate('/search');
-            }
-        }
-        else {
-            setErrorMessages({ name: "username", message: errors.username });
-        }
-    }
-
-    const renderErrorMessage = (name) =>
-        name === errorMessages.name && (
-            <div className="error">{errorMessages.message}</div>
-        );
+export default function Form(){
     return (
         <div>
             <section className="form--container">
@@ -65,21 +19,19 @@ export default function Form() {
                 </div>
                 <div className="row--spacer">
                     <div className="col">
-                        <form className="v--form" onSubmit={handleSubmit}>
+                        <form className="v--form">
                             <div className="row--spacer">
                                 <div className="form--group">
                                     <label className="col-sm" htmlfor="input_username">Username</label>
                                     <div className="col-m">
-                                        <input type="text" id="input_username" name="username" placeholder="Username" onChange={(e) => setUserName(e.target.value)} className="form--control" />
-                                        {renderErrorMessage("username")}
+                                        <input type="text" id="input_username" name="input_username" placeholder="Username" className="form--control" />
                                     </div>
                                 </div>
 
                                 <div className="form--group">
                                     <label className="col-sm" htmlfor="input_password">Password</label>
                                     <div className="col-m">
-                                        <input type="password" id="input_password" name="password" placeholder="Password" onChange={(e) => setPassword(e.target.value)} className="form--control" />
-                                        {renderErrorMessage("password")}
+                                        <input type="text" id="input_password" name="input_password" placeholder="Password" className="form--control" />
                                     </div>
                                 </div>
 
